@@ -1,9 +1,33 @@
-.the-table{
-    background-color: skyblue;
+body{
+    /*background:linear-gradient(to bottom right, skyblue, #FFC09F);*/
+    animation: color-change 30s infinite;
 }
-
 .card{
     min-height:249px;
     min-width:179px;
     /*background:url('/cards/deck.png');*/
+}
+.cards{
+    margin-top:249px;
+}
+
+.the-pot{
+    font-size: 40px;
+    text-align:center;
+    color:white
+}
+
+.community-cards{
+    height:249px;
+    width:179px;
+}
+
+
+
+@keyframes color-change {
+    0%   {background-color:#7FD1B9;}
+    25%  {background-color:#FFC09F;}
+    50%  {background-color:#FFEE93;}
+    75%  {background-color:#254E70;}
+    100%  {background-color:#7FD1B9}
 }
