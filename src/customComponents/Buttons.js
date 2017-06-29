@@ -5,19 +5,19 @@ class Buttons extends Component{
         return(
             <div className="col-sm-12 buttons">
                 <div className="col-sm-2">
-                    <button className="btn btn-info">Deal</button>
+                    <button onClick={this.props.deal} className="btn btn-warning">Deal</button>
                 </div>
                 <div className="col-sm-2">
-                    <button className="btn btn-info">Bet 10</button>
+                    <button className="btn btn-warning">Bet 10</button>
                 </div>
                 <div className="col-sm-2">
-                    <button className="btn btn-info">Bet 100</button>
+                    <button className="btn btn-warning">Bet 100</button>
                 </div>
                 <div className="col-sm-2">
-                    <button className="btn btn-info">Check</button>
+                    <button className="btn btn-warning">Check</button>
                 </div>
                 <div className="col-sm-2">
-                    <button className="btn btn-info">Fold</button>
+                    <button className="btn btn-warning">Fold</button>
                 </div>
             </div>
         )

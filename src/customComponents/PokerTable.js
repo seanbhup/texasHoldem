@@ -11,7 +11,7 @@ class PokerTable extends Component {
         super(props);
         this.state = {
             computersHand: ['deck','deck'],
-            communityCards: [],
+            communityCards: ['deck','deck','deck','deck','deck'],
             playersHand: ['deck','deck']
 
         }
@@ -21,18 +21,29 @@ class PokerTable extends Component {
     prepDeck(){
         cards.createDeck();
         cards.shuffleDeck();
+        // the deck is now ready for a new hand
+        // set up the players hand and the dealers hand
+        var card1 = cards.deck.shift();
+        var card2 = cards.deck.shift();
+        var card3 = cards.deck.shift();
+        var card4 = cards.deck.shift();
+        // cards.deck is now 4 items fewer == we mutated it
+        var playersStartingHand = [card1,card3];
+        var computersStartingHand = [card2,card4];
+
+        this.setState({
+            playersHand: playersStartingHand,
+            computersHand: computersStartingHand
+        });
     }
 
     render(){
-        this.prepDeck();
-        console.log(cards.deck);
-
         return(
             <div className="col-sm-12 the-table">
                 <PokerHand cards={this.state.computersHand}/>   {/* computers hand */}
                 <PokerHand cards={this.state.communityCards}/>   {/* community cards */}
                 <PokerHand cards={this.state.playersHand}/>   {/* players hand */}
-                <Buttons />
+                <Buttons deal={this.prepDeck} />
             </div>
         )
     }

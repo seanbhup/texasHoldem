@@ -9,7 +9,7 @@ class PokerHand extends Component{
         });
 
         return(
-            <div className="col-sm-1 poker-hand">
+            <div className="col-sm-12 poker-hand">
                 {hand}
             </div>
         )
